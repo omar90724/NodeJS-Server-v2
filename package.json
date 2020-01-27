@@ -1,0 +1,17 @@
+{
+  "name": "barbearia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Omar Alviarez <51750580+omar90724@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.0"
+  }
+}

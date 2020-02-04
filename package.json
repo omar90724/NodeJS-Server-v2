@@ -5,7 +5,7 @@
   "author": "Omar Alviarez <51750580+omar90724@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/index.js -e js"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",
@@ -14,9 +14,11 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
+    "express-session": "^1.17.0",
     "multer": "^1.4.2",
     "nunjucks": "^3.2.0",
     "pg": "^7.17.1",
-    "sequelize": "^5.21.3"
+    "sequelize": "^5.21.3",
+    "session-file-store": "^1.4.0"
   }
 }

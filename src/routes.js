@@ -9,13 +9,14 @@ const guestMiddleware = require("./app/middlewares/guest");
 
 const UserController = require("./app/controllers/userController");
 const SessionController = require("./app/controllers/SessionController");
+const DashboardController = require("./app/controllers/DashboardController");
 
-routes.use((req, res, next)=>{
+routes.use((req, res, next) => {
   res.locals.flashSuccess = req.flash("success");
   res.locals.flashError = req.flash("error");
 
-  return next()
-})
+  return next();
+});
 
 routes.get("/", guestMiddleware, SessionController.create);
 routes.post("/signin", SessionController.store);
@@ -24,12 +25,8 @@ routes.get("/signup", guestMiddleware, UserController.create);
 routes.post("/signup", upload.single("avatar"), UserController.store);
 
 routes.use("/app", authMiddleware);
-routes.get("/app/logout", SessionController.destroy)
+routes.get("/app/logout", SessionController.destroy);
 
-
-routes.get("/app/dashboard", (req, res) => {
-  console.log(req.session.user);
-  return res.render("dashboard");
-});
+routes.get("/app/dashboard", DashboardController.index);
 
 module.exports = routes;
